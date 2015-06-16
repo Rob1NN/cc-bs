@@ -37,6 +37,7 @@ function main ()
     elseif item.name == "chisel:diorite" then remove()
     elseif item.name == "chisel:andesite" then remove()
     elseif item.name == "chisel:granite" then remove()
+    elseif item.name == "chisel:marble" then remove()
     else keep()
     end
   else
