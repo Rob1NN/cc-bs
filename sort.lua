@@ -23,7 +23,31 @@ function keep ()
   turtle.dropUp(64)
 end
 
+function check ()
+  local above = turtle.inspectUp()
+  local below = turtle.inspectDown()
+  
+  if above == nil then
+    print("No chest above the turtle. Waiting...")
+    return false
+  elseif below == nil then
+    print("No chest below the turtle.
+    return true
+  else
+    return true
+  end
+end
+
+function checkup ()
+  if not check() == true then
+    sleep(1)
+    checkup()
+  end
+end
+
 function main ()
+  checkup()
+  
   local item = turtle.getItemDetail(turtle.getSelectedSlot())
 
   if item then
