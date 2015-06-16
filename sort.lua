@@ -31,7 +31,7 @@ function check ()
     print("No chest above the turtle. Waiting...")
     return false
   elseif below == nil then
-    print("No chest below the turtle.
+    print("No chest below the turtle.")
     return true
   else
     return true
