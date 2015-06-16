@@ -24,20 +24,19 @@ function keep ()
 end
 
 function main ()
-  scrollinv()  
-
   local item = turtle.getItemDetail(turtle.getSelectedSlot())
 
   if item then
     print("Item name: ", item.name)
     print("Item damage value: ", item.damage)
     print("Item count: ", item.count)
-    if item.name == "minecraft:cobblestone" then remove()
-    elseif item.name == "chisel:limestone" then remove()
-    elseif item.name == "chisel:diorite" then remove()
-    elseif item.name == "chisel:andesite" then remove()
-    elseif item.name == "chisel:granite" then remove()
-    elseif item.name == "chisel:marble" then remove()
+    local block = item.name
+    if block == "minecraft:cobblestone" then remove()
+    elseif block == "chisel:limestone" then remove()
+    elseif block == "chisel:diorite" then remove()
+    elseif block == "chisel:andesite" then remove()
+    elseif block == "chisel:granite" then remove()
+    elseif block == "chisel:marble" then remove()
     else keep()
     end
   else
@@ -45,11 +44,12 @@ function main ()
     turtle.suck(64)
     main()
   end
-  sleep(0.01)
 end
 
 while true do
   main()
+  scrollinv()
+  sleep(0.01)
 end
 
 print("Program killed the main loop. Exiting...")
