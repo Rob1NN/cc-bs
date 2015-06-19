@@ -3,6 +3,7 @@ term.setCursorPos(1,1)
 print("Starting to sort...")
 
 function scrollinv ()
+  local next = nil
   if turtle.getSelectedSlot() == 16 then
     next = 1
   else
